@@ -6,11 +6,17 @@
 <body>
 data
 <script>
-d3.json("user.json", function(data) {
-    for(var i = 0; i<data.length;i++){
+d3.json("user.json", function(error, data) {
+    
+    d3.select("body")
+        .selectAll("p")
+        .data(data)
+        .enter()
+        .append("p")
+        .text(function(d) {
+            return d.name + ", " + d.location;
+        });
 
-        console.log(data[i]);
-    }
 });
 </script>
 </body>
