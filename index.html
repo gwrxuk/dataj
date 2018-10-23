@@ -4,18 +4,27 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
-data
+
 <script>
-d3.json("user.json", function(error, data) {
-    
+d3.json("job.json", function(error, data) {
+    console.log(data);
+    for(var i = 0;i<data.length;i++){
+
+        console.log(data[i]);
+    }
+
+
+
+/*
     d3.select("body")
         .selectAll("p")
         .data(data)
         .enter()
         .append("p")
         .text(function(d) {
-            return d.name + ", " + d.location;
+            return d["事業單位名稱（工程名稱）"];
         });
+        */
 
 });
 </script>
